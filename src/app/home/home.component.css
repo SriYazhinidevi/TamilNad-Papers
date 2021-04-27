@@ -1,0 +1,88 @@
+.heading {
+  font-size:60px;
+  /* border: 2px solid green; */
+}
+
+.head-cont {
+  position: absolute;
+  top:350px;
+  width: 100%;
+  /* border: 2px solid green; */
+}
+
+.ourproducts {
+  /* height: 600px; */
+}
+
+.aboutme {
+  height: 600px;
+  background-color: black;
+  color:white;
+  /* display: flex;  
+  flex-direction: column; */
+}
+
+.coll {
+  display: flex;
+  flex-direction: row;
+  /* flex-direction: row; */
+  /* border:1px solid yellow; */
+  justify-content: space-around;
+
+}
+
+.col1 {
+  width: 500px;
+  height: 350px;
+  /* flex:1; */
+  /* border:1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+  color:black;
+  border-radius: 10px;
+  padding: 0px 10px 0px 10px;
+}
+
+.col2 {
+  /* border:1px solid pink; */
+  /* flex:1; */
+  width:500px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.contact {
+  height: 600px;
+  background-color: lightgrey;
+  color:black;
+  /* display: flex;  
+  flex-direction: column; */
+}
+
+#myfooter {
+  color:white;
+  background-color: black;
+  opacity:0.9;
+  flex-shrink: none;
+  position: absolute;
+  margin-bottom: 0px;
+  width: 100%;
+}
+#copyright {
+  font-family: Arial, Helvetica, sans-serif; 
+  font-size: 1em;
+  color:lightgray;
+  margin-top: -10px;
+}
+
+#mail {
+  text-decoration: none;
+  color:white;
+}

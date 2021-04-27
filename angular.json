@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "tamilnad"
+  "defaultProject": "tamilnad",
+  "cli": {
+    "analytics": false
+  }
 }
