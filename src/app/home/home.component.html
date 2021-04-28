@@ -1,4 +1,4 @@
-<header>
+<header id="home">
   <nav class="navbar navbar-expand-lg" style="background-color:black;color:white">
     <a class="navbar-brand">TamilNad Papers</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -10,22 +10,22 @@
         <li 
           class="nav-item" 
         >
-          <a class="nav-link text-white" href="#">Home</a>
+          <a class="nav-link text-white" fragment="home" (click)="navigateToSection('home')">Home</a>
         </li>
         <li 
           class="nav-item" 
         >
-          <a class="nav-link text-white" href="#prod">Products</a>
+          <a class="nav-link text-white" fragment="prod" (click)="navigateToSection('prod')">Products</a>
         </li>
         <li 
           class="nav-item" 
         >
-          <a class="nav-link text-white" href="#">About me</a>
+          <a class="nav-link text-white" fragment="aboutme" (click)="navigateToSection('aboutme')">About me</a>
         </li>
         <li 
           class="nav-item" 
         >
-          <a class="nav-link text-white" href="#">Contact</a>
+          <a class="nav-link text-white" fragment="contactme" (click)="navigateToSection('contactme')">Contact</a>
         </li>
       </ul>
     </div>
@@ -59,7 +59,7 @@
     </a>
   </div>
 </div>
-<div class="container-flush text-center head-cont">
+<div class="container-flush text-center head-cont" >
   <h2 class="heading">TamilNad Papers</h2>
   <div class="container text-center">
     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
@@ -219,7 +219,7 @@
   </div>
 </div>
 <div class="pt-5"></div>
-<div class="container-fluid aboutme ">
+<div class="container-fluid aboutme " id="aboutme">
   <h1 class="text-center pt-5">About Me</h1>
   <div class="coll pt-5">
     <div class="col1 text-center">
@@ -232,7 +232,7 @@
   </div>
 </div>
 
-<div class="container-fluid contact ">
+<div class="container-fluid contact " id="contactme">
   <h1 class="text-center pt-5">Contact</h1>
   <div class="coll pt-5">
     <div class="col1 text-center" style="width:600px; border-radius: 2px;">
