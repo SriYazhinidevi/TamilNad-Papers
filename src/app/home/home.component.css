@@ -66,6 +66,10 @@
   flex-direction: column; */
 }
 
+.nav-link {
+  cursor: pointer;
+}
+
 #myfooter {
   color:white;
   background-color: black;
