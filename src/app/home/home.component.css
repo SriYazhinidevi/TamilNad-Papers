@@ -86,3 +86,6 @@
   text-decoration: none;
   color:white;
 }
+.nav-link {
+  cursor: pointer;
+}
