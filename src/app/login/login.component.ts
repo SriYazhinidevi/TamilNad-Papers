@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpService } from '../http.service';
 
 @Component({
   selector: 'app-login',
@@ -15,26 +16,41 @@ export class LoginComponent implements OnInit {
   msg1 = '';
   msg2 = '';
 
-  constructor(private router: Router) { }
+  flag : boolean = false;
+
+  allUsers : any;
+
+  constructor(private router: Router, private httpService : HttpService) { }
 
   ngOnInit(): void {
+    this.getAllUsers();
   }
 
   onSubmit() {
 
     if(this.Username === '') {
       this.status1 = true;
-      this.msg1 = "Username Error";
+      this.msg1 = "Enter Username";
     }
     if(this.Password === '') {
       this.status2 = true;
-      this.msg2 = "Password Error";
+      this.msg2 = "Enter Password";
     }
-    if(this.Username==='Shwetha') {
-      if(this.Password==='123') {
-        this.router.navigate(['home']);
+    else {
+      var i;
+      for(i=0;i<this.allUsers.length;i++) {
+        if(this.Username===this.allUsers[i].email) {
+          if(this.Password === this.allUsers[i].password) {
+            this.flag = true;
+            this.router.navigate(['/home']);
+          }
+        }
+      }
+      if(this.flag === false) {
+        alert("Invalid Credentials");
       }
     }
+    
   }
 
   onChange1(event) {
@@ -43,6 +59,17 @@ export class LoginComponent implements OnInit {
 
   onChange2(event) {
     this.status2 = false;
+  }
+
+  getAllUsers() {
+    this.httpService.getUsers().subscribe((data)=> {
+      this.allUsers = Object.values(data)
+      console.log(this.allUsers);
+    });
+  }
+
+  goSignup() {
+    this.router.navigate(['/signup']);
   }
 
 }
