@@ -1,42 +1,91 @@
-<!--<app-navbar></app-navbar>
-<header id='cart'></header>
-<section>
-  <div class="spacer">
-    <div class="container">
-      <div class="row mt-5">
-        <div class="col-lg-9">
-          <div class="row shop-listing">
-            <table class="table shop-table" *ngIf="carts">
-              <tr>
-                <th class="b-0">Name</th>
-                <th class="b-0">Price</th>
-                <th class="b-0">Quantity</th>
-                <th class="b-0 text-right">Total Price</th>
-              </tr>
-              <tr *ngFor="let item of carts.items">
-                <td>{{ item.productId.name }}</td>
-                <td>{{ item.productId.price }}</td>
-                <td>
-                  <button class="btn btn-primary btn-sm" (click)="_increamentQTY(item.productId._id,1)">+</button>
-                  {{ item.quantity }}
-                  <button class="btn btn-primary btn-sm">-</button>
-                </td>
-                <td class="text-right">
-                  <h5 class="font-medium m-b-30">{{ item.total }}</h5>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="3" align="right">Subtotal :{{ carts.subTotal }}</td>
-                <td colspan="4" align="right">
-                  <button class="btn btn-danger" (click)="_emptyCart()">Empty Cart</button>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
+<header id="home">
+  <nav class="navbar navbar-expand-lg" style="background-color:black;color:white">
+    <a class="navbar-brand">TamilNad Papers</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li
+          class="nav-item"
+        >
+          <a class="nav-link text-white" fragments="home"   routerLink="/" routerLinkActive="active">Home</a>
+        </li>
+
+        <li
+          class="nav-item"
+        >
+        <a class="nav-link text-white" fragments="prod"  routerLink="/product" routerLinkActive="active">Products</a>
+        </li>
+        <li
+          class="nav-item"
+        >
+
+        <a class="nav-link text-white" fragments="cart"  routerLink="/cart" routerLinkActive="active">Cart</a>
+        </li>
+
+
+        <li
+          class="nav-item"
+        >
+
+        <a class="nav-link text-white" fragments="login"  routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li
+          class="nav-item"
+        >
+
+        <a class="nav-link text-white" fragments="signup"  routerLink="/signup" routerLinkActive="active">SignUp</a>
+        </li>
+        <li
+          class="nav-item"
+        >
+
+        <a class="nav-link text-white" fragments="signout"  routerLink="/login" routerLinkActive="active">Sign Out</a>
+        </li>
+      </ul>
     </div>
-  </div>
-</section>
-<router-outlet></router-outlet>-->
-<h1>Hello</h1>
+  </nav>
+</header>
+        <div id="collapseExample" >
+            <div class="card">
+              <div class="card-body">
+               <h1 style="color:rgb(4, 5, 59)">Items in your cart:<span style="margin-left: 5%;margin-right: 22%;color: rgb(9, 14, 3)">
+                Total value is: {{total}}</span>
+                <button class="btn btn-outline-success" (click)="calculatetotal()">Total</button>
+                 </h1>
+
+                  <table class="table table-bordered table-responsive table-hover">
+                    <thead class="thead-light">
+                    <tr>
+                      <th>Image</th>
+                      <th>Name & Description</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total For Item</th>
+                    </tr>
+                    </thead>
+                    <tr *ngFor="let prod of items">
+                      <td><img src={{prod.img}} width="250px;" height="270px;"/></td>
+                      <td class="text-center">{{prod.name}}-{{prod.description}}</td>
+                      <td>{{prod.price}}</td>
+                      <td>
+                        <div class="form-inline">
+                        <button type="button"  class="btn btn-success" (click)="onAddQuantity(prod)">+</button>
+                        <input type="text"  value={{prod.quantity}} class="form-control form-inline" id={{prod.id}}>
+                        <button type="button"  class="btn btn-danger" (click)="onRemoveQuantity(prod)">-</button>
+                        </div>
+                      </td>
+                      <td>{{prod.total}}</td>
+                    </tr>
+                  </table>
+              </div>
+            </div>
+          </div>
+          <div>
+
+            <button class="btn btn-outline-success" (click)="display()">Place Order</button>
+          </div>
+
+

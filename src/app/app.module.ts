@@ -13,8 +13,12 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CartComponent } from './cart/cart.component';
-import { ProductsComponent } from './products/products.component';
 import { RegisterComponent } from './register/register.component';
+import { ProductdisplayComponent } from './productdisplay/productdisplay.component';
+import { ProductService } from './product.service';
+import { AdminComponent } from './admin/admin.component';
+
+
 
 @NgModule({
   declarations: [
@@ -23,8 +27,9 @@ import { RegisterComponent } from './register/register.component';
     HomeComponent,
     NavbarComponent,
     CartComponent,
-    ProductsComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductdisplayComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

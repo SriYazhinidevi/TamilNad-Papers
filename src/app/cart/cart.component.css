@@ -42,3 +42,19 @@ shop table
 .shop-table td {
   padding: 30px 0;
 }
+a{
+  border-radius: 10px;
+  align : center;
+}
+a:link, a:visited {
+  background-color: black;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: black;
+}

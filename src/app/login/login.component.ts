@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
         alert("Invalid Credentials");
       }
     }
-    
+
   }
 
   onChange1(event) {
@@ -70,6 +70,10 @@ export class LoginComponent implements OnInit {
 
   goSignup() {
     this.router.navigate(['/signup']);
+  }
+  goHome()
+  {
+    this.router.navigate(['/']);
   }
 
 }

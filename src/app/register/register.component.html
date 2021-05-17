@@ -1,3 +1,8 @@
+<header id="home">
+  <nav class="navbar navbar-expand-lg" style="background-color:black;color:white">
+    <a class="navbar-brand">TamilNad Papers</a>
+  </nav>
+</header>
 <div class="container-flush">
   <div id="container" class="col-md-4 col-sm-8">
       <form class="form my-form" #postForm="ngForm" (ngSubmit)="onSubmit(postForm.value);postForm.reset()">
@@ -6,10 +11,10 @@
                   <h1 style="font-weight:500">SignUp</h1>
               </div>
               <div class="form-group pt-5">
-              <input 
-                  type="text" 
-                  class="form-control" 
-                  id="email" 
+              <input
+                  type="text"
+                  class="form-control"
+                  id="email"
                   name = "email"
                   placeholder="Email"
                   ngModel
@@ -20,30 +25,30 @@
               <p *ngIf="status1" class="err-msg">{{msg1}}</p>
               </div>
               <div class="form-group">
-                <input 
-                    type="text" 
-                    class="form-control" 
-                    id="name" 
+                <input
+                    type="text"
+                    class="form-control"
+                    id="name"
                     name = "name"
                     placeholder="Name"
                     ngModel
                 >
               </div>
               <div class="form-group">
-                <input 
-                    type="text" 
-                    class="form-control" 
-                    id="mobileno" 
+                <input
+                    type="text"
+                    class="form-control"
+                    id="mobileno"
                     name = "mobileno"
                     placeholder="Mobile No"
                     ngModel
                 >
               </div>
               <div class="form-group">
-              <input 
-                  type="password" 
-                  class="form-control" 
-                  id="password" 
+              <input
+                  type="password"
+                  class="form-control"
+                  id="password"
                   name = "password"
                   placeholder="Password"
                   ngModel
@@ -52,10 +57,10 @@
               <p *ngIf="status2" class="err-msg">{{msg2}}</p>
               </div>
               <div class="form-group">
-                <input 
-                    type="password" 
-                    class="form-control" 
-                    id="confirmpassword" 
+                <input
+                    type="password"
+                    class="form-control"
+                    id="confirmpassword"
                     name = "confirmpassword"
                     placeholder="Confirm Password"
                     ngModel
@@ -63,10 +68,11 @@
                 >
                 <p *ngIf="status3" class="err-msg">{{msg3}}</p>
               </div>
-      
+
               <div class="text-center pt-4">
                   <button type="submit" class="btn btn-primary" >Submit</button><br>
                   <p class="forgot-pass pt-2" (click)="goLogin()">Go to Login</p>
+                  <p class="forgot-pass pt-2" (click)="goHome()">Home</p>
               </div>
           </div>
       </form>

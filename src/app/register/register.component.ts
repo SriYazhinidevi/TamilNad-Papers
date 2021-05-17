@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
     if(data.email === '' || data.email === null) {
       alert("Email is Mandatory");
     }
-    
+
     if(data.password === '' || data.password === null) {
       alert("password and confirm password is mandatory");
     }
@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
         alert("Password and Confirm Password Mismatch");
       }
     }
-    
+
   }
 
   onChange1(event) {
@@ -56,6 +56,10 @@ export class RegisterComponent implements OnInit {
   }
 
   goLogin() {
+    this.router.navigate(['/login']);
+  }
+  goHome()
+  {
     this.router.navigate(['/']);
   }
 

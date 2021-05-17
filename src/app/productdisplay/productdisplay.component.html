@@ -1,0 +1,75 @@
+<header id="home">
+  <nav class="navbar navbar-expand-lg" style="background-color:black;color:white">
+    <a class="navbar-brand">TamilNad Papers</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li
+          class="nav-item"
+        >
+          <a class="nav-link text-white" fragments="home"   routerLink="/" routerLinkActive="active">Home</a>
+        </li>
+
+        <li
+          class="nav-item"
+        >
+        <a class="nav-link text-white" fragments="prod"  routerLink="/product" routerLinkActive="active">Products</a>
+        </li>
+        <li
+          class="nav-item"
+        >
+
+        <a class="nav-link text-white" fragments="cart"  routerLink="/cart" routerLinkActive="active">Cart</a>
+        </li>
+
+
+        <li
+          class="nav-item"
+        >
+
+        <a class="nav-link text-white" fragments="login"  routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li
+          class="nav-item"
+        >
+
+        <a class="nav-link text-white" fragments="signup"  routerLink="/signup" routerLinkActive="active">SignUp</a>
+        </li>
+        <li
+          class="nav-item"
+        >
+
+        <a class="nav-link text-white" fragments="signout"  routerLink="/login" routerLinkActive="active">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<div class="container-fluid ourproducts " id="prod">
+
+    <div class="row">
+      <div class="col-3 pt-4" *ngFor="let item of items">
+        <div class="card flex-fill" style="width: 180px;" >
+          <img
+            class="flex-fill Card-image"
+            src = "{{item.img}}"
+            alt="Card-image cap"
+            style="height: 200px; padding-right: 0px; border-radius: 8px 8px 0px 0px; border: none;"
+          >
+          <div class="card-body">
+            <p class="card-title" style="font-weight: bold;">{{item.name}}</p>
+            <p class="card-text">Price : Rs.{{item.price}} per packet</p>
+              <p class="card-text">{{item.description}}
+            </p>
+            <button type="button"   class="btn btn-outline-success" (click)="addProduct(item)"><b>Add to cart</b></button>
+
+        </div>
+      </div>
+
+
+    </div>
+</div>
+<!--<a  fragments="cart"  routerLink="/cart" routerLinkActive="active">Cart</a>-->
