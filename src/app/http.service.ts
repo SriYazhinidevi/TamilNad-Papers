@@ -6,9 +6,11 @@ import { HttpClient } from '@angular/common/http';
 export class HttpService {
 
   private apiUserUrl:string;
+  private apiUserUrl1:string;
 
   constructor(private http: HttpClient) {
     this.apiUserUrl = 'https://tamilnad-papers-9d18c-default-rtdb.firebaseio.com//users.json';
+    this.apiUserUrl1 = 'https://tamilnad-papers-9d18c-default-rtdb.firebaseio.com//product.json';
   }
 
   saveUsers(data:any) {
@@ -18,20 +20,8 @@ export class HttpService {
   getUsers() {
     return this.http.get<any>(this.apiUserUrl);
   }
+  saveProducts(data: any) {
+    return this.http.post<any>(this.apiUserUrl1, data);
+  }
 
-  // getAllProducts() {
-  //   return this.http.get(`${environment.baseURL}/product`);
-  // }
-  // addToCart(payload) {
-  //   return this.http.post(`${environment.baseURL}/cart`, payload);
-  // }
-  // getCartItems() {
-  //   return this.http.get(`${environment.baseURL}/cart`);
-  // }
-  // increaseQTY(payload) {
-  //   return this.http.post(`${environment.baseURL}/cart`, payload);
-  // }
-  // emptyCart() {
-  //   return this.http.delete(`${environment.baseURL}/cart/empty-cart`);
-  // }
 }
